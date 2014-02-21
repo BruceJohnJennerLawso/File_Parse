@@ -138,7 +138,7 @@ bool TTxt_File::Save_file(std::string file_path, bool selfdestruct)
 			ofstream file (file_path);
 			if (file.is_open())
 			{	for (std::vector<std::string>::iterator it = text_index.begin(); it != text_index.end(); ++it)
-				{	file << ((*it)->append("\n"));	
+				{	file << ((*it).append("\n"));	
 				}
 			}
 			file.close();
