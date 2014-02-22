@@ -6,7 +6,6 @@
 #include <vector>
 #include <time.h>
 #include <algorithm>
-#include "Functionalize!.h"
 
 
 class CFileParse
