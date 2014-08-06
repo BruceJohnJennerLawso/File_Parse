@@ -10,10 +10,11 @@
 
 class CFileParse
 {	public:
-	CFileParse(void);
-	virtual void Load_file();
-	virtual void Save_file();
-	virtual ~CFileParse(void);
+	CFileParse();
+	virtual void Load_file(std::string load_file_path);
+	virtual void Save_file(std::string output_file_path, bool self_destruct);
+	virtual void Save_file(bool self_destruct);	
+	virtual ~CFileParse();
 };
 
 namespace Parse_functions
@@ -49,7 +50,7 @@ namespace Parse_functions
 #elif __unix // all unices not caught above
     #include <unistd.h>
     #define GetCurrentDir getcwd
-#elif __posix
+#elif __posix // if not posix, what the hell are you running?
     #include <unistd.h>
     #define GetCurrentDir getcwd
 #endif
