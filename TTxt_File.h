@@ -1,7 +1,5 @@
-#include "FileParse.h"		
-#include <string>
-#include <iostream>
-#include <fstream>				
+#pragma once
+#include "fileparse.h"						
 
 // TTxt_File ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -23,8 +21,8 @@ class TTxt_File :public CFileParse
 	unsigned int Get_index_size();																								// return the number of lines in the file, or the 'index'
 	bool Read_state();																													// returns the state of the file (ie is it currently read properly)
 	bool Check_file_exists();																										// check if the path held by 'file_path' currently leads to a file
-	bool Save_file(std::string output_file_path, bool self_destruct);												// overwrite the contents of this object onto the file located by 'file_path'
-	bool Save_file(bool self_destruct);																							// same as above, but saving to the default path held by the object
+	bool Save_file(std::string output_file_path, bool self_destruct);											// overwrite the contents of this object onto the file located by 'file_path'
+	bool Save_file(bool self_destruct);																						// same as above, but saving to the default path held by the object
 	private:																																	// private access to force interaction through member functions
 	std::string File_path;																												// full path of the file on this operating system
 	std::vector<std::string> Text_index;																						// The full text of the file, including comments, read cues, etc. 
@@ -34,8 +32,7 @@ class TTxt_File :public CFileParse
 	~TTxt_File();
 };
 
-bool Create_text_file(std::string directory, std::string file_path, bool create_file_header);
-bool Create_text_file(std::string file_path, bool create_file_header);
+bool Create_text_file(std::string directory, std::string file_path);
 bool Check_file_exists(std::string file_path);
 
 
